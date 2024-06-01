@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: front-pipeline-deployment
+  name: front-pipeline-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: front-pipeline-deployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: front-pipeline-deployment
+    spec:
+      containers:
+      - image: wasraz/yallafrontpipeline:1.0.0-55
+        name: front-pipeline-deployment
+        resources: {}
+status: {}
